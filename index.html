@@ -78,41 +78,66 @@
                 <span class="group-hover:text-purple-100 transition">YouTube</span>
             </a>
         </div>
-       <div id="spotify-card" class="mt-6 p-4 rounded-xl bg-black/40 border border-green-500/20 hidden flex items-center gap-4 backdrop-blur-md transition-all">
-            <i class="fa-brands fa-spotify text-green-500 text-3xl animate-pulse"></i>
-            <div class="text-left w-full overflow-hidden">
-                <p class="text-[10px] text-gray-400 uppercase tracking-widest mb-1">Şu an Spotify'da</p>
-                <p id="song-name" class="font-bold text-white text-sm truncate">Şarkı Adı</p>
-                <p id="artist-name" class="text-xs text-green-400 truncate">Sanatçı</p>
-            </div>
+     <div class="w-full flex flex-col gap-3 mt-6">
+    
+    <div id="spotify-card" class="p-4 rounded-xl bg-black/40 border border-purple-500/30 hidden flex items-center gap-4 backdrop-blur-md transition-all shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+        <i class="fa-brands fa-spotify text-purple-500 text-3xl animate-pulse drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]"></i>
+        <div class="text-left w-full overflow-hidden">
+            <p class="text-[10px] text-purple-300/60 uppercase tracking-widest mb-1">Şu an Spotify'da</p>
+            <p id="song-name" class="font-bold text-white text-sm truncate">Şarkı Adı</p>
+            <p id="artist-name" class="text-xs text-purple-400 truncate">Sanatçı</p>
         </div>
-
-        <script>
-            const discordId = "425665649260363786";
-
-            function updateSpotify() {
-                fetch(`https://api.lanyard.rest/v1/users/${discordId}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        const spotifyCard = document.getElementById('spotify-card');
-                        if (data.success && data.data.spotify) {
-                            document.getElementById('song-name').textContent = data.data.spotify.song;
-                            document.getElementById('artist-name').textContent = data.data.spotify.artist;
-                            spotifyCard.classList.remove('hidden');
-                        } else {
-                            spotifyCard.classList.add('hidden');
-                        }
-                    })
-                    .catch(err => console.log("Spotify verisi çekilemedi:", err));
-            }
-
-            updateSpotify();
-            setInterval(updateSpotify, 5000);
-        </script>
     </div>
 
+    <div id="game-card" class="p-4 rounded-xl bg-black/40 border border-purple-500/30 hidden flex items-center gap-4 backdrop-blur-md transition-all shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+        <i class="fa-solid fa-gamepad text-purple-500 text-3xl animate-pulse drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]"></i>
+        <div class="text-left w-full overflow-hidden">
+            <p class="text-[10px] text-purple-300/60 uppercase tracking-widest mb-1">Şu an Oynuyor</p>
+            <p id="game-name" class="font-bold text-white text-sm truncate">Oyun Adı</p>
+            <p id="game-details" class="text-xs text-purple-400 truncate">Oyunda</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const discordId = "425665649260363786";
+
+    function updateActivities() {
+        fetch(`https://api.lanyard.rest/v1/users/${discordId}`)
+            .then(res => res.json())
+            .then(data => {
+                if (!data.success) return;
+
+                const spotifyCard = document.getElementById('spotify-card');
+                if (data.data.spotify) {
+                    document.getElementById('song-name').textContent = data.data.spotify.song;
+                    document.getElementById('artist-name').textContent = data.data.spotify.artist;
+                    spotifyCard.classList.remove('hidden');
+                } else {
+                    spotifyCard.classList.add('hidden');
+                }
+
+                const gameCard = document.getElementById('game-card');
+                const gameActivity = data.data.activities.find(activity => activity.type === 0);
+                
+                if (gameActivity) {
+                    document.getElementById('game-name').textContent = gameActivity.name;
+                    document.getElementById('game-details').textContent = gameActivity.details || "Oyun Oynuyor";
+                    gameCard.classList.remove('hidden');
+                } else {
+                    gameCard.classList.add('hidden');
+                }
+            })
+            .catch(err => console.log("Veri çekilemedi:", err));
+    }
+
+    updateActivities();
+    setInterval(updateActivities, 5000);
+</script>
+
     <script>
-        const texts = ["Developer", "Gamer", "Night Owl"];
+        const texts = ["Not Zenin?, Huh!", "Fushiguro", "Night Owl"];
         let count = 0;
         let index = 0;
         let currentText = "";
