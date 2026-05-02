@@ -78,6 +78,44 @@
                 <span class="group-hover:text-purple-100 transition">YouTube</span>
             </a>
         </div>
+        <div id="spotify-card" class="mt-6 p-4 rounded-xl bg-black/40 border border-green-500/20 hidden flex items-center gap-4 backdrop-blur-md transition-all">
+            <i class="fa-brands fa-spotify text-green-500 text-3xl animate-pulse"></i>
+            <div class="text-left w-full overflow-hidden">
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest mb-1">Şu an Spotify'da</p>
+                <p id="song-name" class="font-bold text-white text-sm truncate">Şarkı Adı</p>
+                <p id="artist-name" class="text-xs text-green-400 truncate">Sanatçı</p>
+            </div>
+        </div>
+
+        <script>
+            const discordId = "425665649260363786";
+
+            function updateSpotify() {
+                fetch(`https://api.lanyard.rest/v1/users/${discordId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        const spotifyCard = document.getElementById('spotify-card');
+                        if (data.success && data.data.spotify) {
+                            document.getElementById('song-name').textContent = data.data.spotify.song;
+                            document.getElementById('artist-name').textContent = data.data.spotify.artist;
+                            spotifyCard.classList.remove('hidden');
+                        } else {
+                            spotifyCard.classList.add('hidden');
+                        }
+                    })
+                    .catch(err => console.log("Spotify verisi çekilemedi:", err));
+            }
+            
+            updateSpotify();
+            setInterval(updateSpotify, 5000);
+        </script>
+        ```
+
+### Son İşlem:
+1. Kodun içindeki `const discordId = "BURAYA_YAPIŞTIR";` kısmına az önce kopyaladığın o uzun sayıyı yapıştır.
+2. `CTRL + S` yapıp kaydet.
+3. Arka planda Spotify'dan bir şarkı aç (Discord'da "Spotify Dinliyor" yazısı çıksın).
+4. Live Server'dan sitene bak. Şarkı anında orada belirecek (Müzik dinlemiyorken o kutu otomatik gizlenir, siteyi çirkin göstermez).
 
     </div>
 
