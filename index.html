@@ -178,5 +178,57 @@
             setTimeout(type, 100);
         })();
     </script>
+         <script>
+        // --- YAYIN KONTROL PANELİ ---
+        // Yayına girdiğinde 'false' yazan yeri 'true' yapman yeterli!
+        const streamStatus = {
+            youtube: {
+                isLive: true, // Test etmek için Youtube'u true yaptım
+                url: "https://youtube.com/@SENIN_KANALIN/live",
+                color: "text-red-500 border-red-500/30 hover:shadow-[0_0_15px_rgba(239,68,68,0.5)]",
+                icon: '<i class="fa-brands fa-youtube"></i>'
+            },
+            kick: {
+                isLive: false,
+                url: "https://kick.com/SENIN_KANALIN",
+                color: "text-green-400 border-green-400/30 hover:shadow-[0_0_15px_rgba(74,222,128,0.5)]",
+                icon: '<span class="font-extrabold tracking-tighter">K</span>' // Kick logosu standart fontlarda olmadığı için özel K harfi
+            },
+            tiktok: {
+                isLive: true, // Test etmek için Tiktok'u da true yaptım
+                url: "https://tiktok.com/@SENIN_KANALIN/live",
+                color: "text-white border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]",
+                icon: '<i class="fa-brands fa-tiktok"></i>'
+            }
+        };
+
+        const platformContainer = document.getElementById('live-platforms');
+        let isAnyLive = false;
+
+        // Ayarları kontrol et ve ikonları yerleştir
+        for (const [platform, data] of Object.entries(streamStatus)) {
+            if (data.isLive) {
+                isAnyLive = true;
+                const link = document.createElement('a');
+                link.href = data.url;
+                link.target = "_blank";
+                link.className = `flex items-center justify-center w-8 h-8 rounded-full bg-black/60 border text-lg transition-all duration-300 transform hover:scale-110 ${data.color}`;
+                link.innerHTML = data.icon;
+                platformContainer.appendChild(link);
+            }
+        }
+
+        // Eğer en az 1 platformda yayındaysan profil efektlerini (Kırmızı Ring ve Rozet) aktifleştir
+        if (isAnyLive) {
+            document.getElementById('live-ring-1').classList.remove('hidden');
+            document.getElementById('live-ring-2').classList.remove('hidden');
+            document.getElementById('live-badge').classList.remove('hidden');
+            
+            // Profil çerçevesini mordan kırmızıya çevir
+            const pp = document.getElementById('profile-pic');
+            pp.classList.remove('border-purple-500/50', 'shadow-[0_0_15px_rgba(168,85,247,0.4)]');
+            pp.classList.add('border-red-500', 'shadow-[0_0_15px_rgba(220,38,38,0.6)]');
+        }
+    </script>
 </body>
 </html>
