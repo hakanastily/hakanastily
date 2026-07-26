@@ -213,7 +213,7 @@
         // Ayarları kontrol et ve ikonları yerleştir
         for (const [platform, data] of Object.entries(streamStatus)) {
             if (data.isLive) {
-                isAnyLive = true;
+                isAnyLive = false;
                 const link = document.createElement('a');
                 link.href = data.url;
                 link.target = "_blank";
