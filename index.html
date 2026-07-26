@@ -196,8 +196,10 @@
             kick: {
                 isLive: false,
                 url: "https://kick.com/hakanastily",
-                color: "text-gray-400 hover:text-purple-500",
-                icon: '<span class="font-extrabold text-2xl tracking-tighter">K</span>' 
+                // Resim kullanacağımız için renk yerine opaklık (saydamlık) efekti veriyoruz
+                color: "opacity-50 hover:opacity-100",
+                // Buraya FontAwesome kodu yerine direkt indirdiğin resmi çağırıyoruz
+                icon: '<img src="kick.png" alt="Kick" class="w-6 h-6 object-contain">' 
             },
             tiktok: {
                 isLive: true,
