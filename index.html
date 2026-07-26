@@ -42,20 +42,17 @@
 <body class="h-screen w-full flex items-center justify-center overflow-hidden font-sans">
     <img src="hxh.png" class="hidden md:block absolute left-10 top-1/2 -translate-y-1/2 w-64 h-auto rounded-2xl opacity-60 hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(168,85,247,0.3)] object-cover z-0" alt="HXH">
     <img src="toji.png" class="hidden md:block absolute right-10 top-1/2 -translate-y-1/2 w-64 h-auto rounded-2xl opacity-60 hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(168,85,247,0.3)] object-cover z-0" alt="Toji">
+    
     <div class="glass-card p-8 rounded-3xl max-w-sm w-full text-center transform transition duration-500 hover:scale-[1.02]">
         
-    <div id="live-platforms" class="relative z-50 flex justify-center gap-4 mb-4 min-h-[32px] empty:hidden"></div>
-
-    <div class="relative w-32 h-32 mx-auto mb-6">
-        <div id="live-ring-1" class="hidden absolute -inset-1.5 rounded-full border-2 border-purple-500 animate-ping opacity-75 z-0 pointer-events-none"></div>
-        <div id="live-ring-2" class="hidden absolute -inset-1.5 rounded-full border-2 border-purple-500 z-0 pointer-events-none"></div>
-
-        <img id="profile-pic" src="avatar.jpeg" alt="Profil" class="relative w-full h-full rounded-full object-cover border-[3px] border-purple-900/50 shadow-xl ring-2 ring-purple-500/20 z-10 transition-all duration-500">
-
-        <div id="live-badge" class="hidden absolute -bottom-2 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-widest z-20 shadow-[0_0_10px_rgba(168,85,247,0.8)] border border-black">
-            LIVE
+        <!-- Profil Fotoğrafı (Orta etiket silindi, mor parlama korundu) -->
+        <div class="relative w-32 h-32 mx-auto mb-6">
+            <div class="absolute -inset-1.5 rounded-full border-2 border-purple-500 animate-ping opacity-50 z-0 pointer-events-none"></div>
+            <div class="absolute -inset-1.5 rounded-full border-2 border-purple-500 z-0 pointer-events-none shadow-[0_0_20px_rgba(168,85,247,0.8)]"></div>
+            
+            <img id="profile-pic" src="avatar.jpeg" alt="Profil" class="relative w-full h-full rounded-full object-cover border-[3px] border-purple-900/50 shadow-xl ring-2 ring-purple-500/20 z-10 transition-all duration-500">
         </div>
-    </div>
+
         <h1 class="text-3xl font-extrabold flex items-center justify-center gap-2 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200">
             Hakan
             <i class="fa-solid fa-circle-check text-purple-500 text-xl"></i>
@@ -65,94 +62,124 @@
             <span id="typewriter"></span><span class="cursor">&nbsp;</span>
         </div>
 
+        <!-- ÜZERİNDE LIVE EFEKTİ OLAN YENİ SOSYAL MEDYA SATIRI -->
         <div class="flex justify-center gap-5 mt-8">
-            <a href="https://youtube.com/c/SENIN_KANALIN" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-200 text-2xl">
-    <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a href="https://kick.com/SENIN_KANALIN" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-200 text-2xl flex items-center justify-center">
-    <svg class="h-[1em] w-auto fill-current" viewBox="2 2 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 2 2 H 8 V 8 H 14 V 2 H 22 V 10 H 18 V 14 H 22 V 22 H 14 V 16 H 8 V 22 H 2 Z"/>
-    </svg>
-            </a>
-            <a href="https://discord.gg/nuhungemisi" target="_blank" class="text-2xl text-gray-400 hover:text-purple-400 transition duration-300 purple-glow">
-                <i class="fa-brands fa-discord"></i>
-            </a>
-            <a href="https://instagram.com/hakanastily" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110">
-        <i class="fa-brands fa-instagram text-2xl"></i>
-    </a>
-    
-    <a href="https://tiktok.com/@hakntechs" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110">
-        <i class="fa-brands fa-tiktok text-2xl"></i>
-    </a>
+            <!-- YOUTUBE -->
+            <div class="relative flex flex-col items-center">
+                <span class="absolute -top-4 bg-[#8b5cf6] text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_0_8px_rgba(139,92,246,0.8)] animate-pulse tracking-wider z-10">LIVE</span>
+                <a href="https://youtube.com/@hakanastily" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+
+            <!-- KICK (Milimetrik ayarlı SVG logomuz) -->
+            <div class="relative flex flex-col items-center">
+                <span class="absolute -top-4 bg-[#8b5cf6] text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_0_8px_rgba(139,92,246,0.8)] animate-pulse tracking-wider z-10">LIVE</span>
+                <a href="https://kick.com/SENIN_KANALIN" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl flex items-center justify-center">
+                    <svg class="h-[1.15em] w-auto fill-current inline-block align-middle" viewBox="2 2 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 2 2 H 8 V 8 H 14 V 2 H 22 V 10 H 18 V 14 H 22 V 22 H 14 V 16 H 8 V 22 H 2 Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- DISCORD -->
+            <div class="relative flex flex-col items-center">
+                <a href="https://discord.gg/nuhungemisi" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+            </div>
+
+            <!-- INSTAGRAM -->
+            <div class="relative flex flex-col items-center">
+                <a href="https://instagram.com/hakanastily" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            
+            <!-- TIKTOK -->
+            <div class="relative flex flex-col items-center">
+                <span class="absolute -top-4 bg-[#8b5cf6] text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_0_8px_rgba(139,92,246,0.8)] animate-pulse tracking-wider z-10">LIVE</span>
+                <a href="https://tiktok.com/@hakntechs" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
         </div>
 
+        <!-- ROKET YOUTUBE BUTONU -->
         <div class="mt-8 space-y-3">
             <a href="https://www.youtube.com/@hakanastily/" class="group flex items-center justify-center w-full py-3 px-4 rounded-xl bg-black/40 hover:bg-purple-900/20 transition duration-300 border border-purple-500/10 hover:border-purple-500/40 text-sm font-medium">
                 <i class="fa-solid fa-rocket mr-3 text-purple-500 group-hover:text-purple-300 transition"></i> 
                 <span class="group-hover:text-purple-100 transition">YouTube</span>
             </a>
         </div>
-     <div class="w-full flex flex-col gap-3 mt-6">
+
+        <!-- SPOTIFY / OYUN KARTLARI -->
+        <div class="w-full flex flex-col gap-3 mt-6">
+            <div id="spotify-card" class="p-4 rounded-xl bg-black/40 border border-purple-500/30 hidden flex items-center gap-4 backdrop-blur-md transition-all shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+                <i class="fa-brands fa-spotify text-purple-500 text-3xl animate-pulse drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]"></i>
+                <div class="text-left w-full overflow-hidden">
+                    <p class="text-[10px] text-purple-300/60 uppercase tracking-widest mb-1">Şu an Spotify'da</p>
+                    <p id="song-name" class="font-bold text-white text-sm truncate">Şarkı Adı</p>
+                    <p id="artist-name" class="text-xs text-purple-400 truncate">Sanatçı</p>
+                </div>
+            </div>
+
+            <div id="game-card" class="p-4 rounded-xl bg-black/40 border border-purple-500/30 hidden flex items-center gap-4 backdrop-blur-md transition-all shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+                <i class="fa-solid fa-gamepad text-purple-500 text-3xl animate-pulse drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]"></i>
+                <div class="text-left w-full overflow-hidden">
+                    <p class="text-[10px] text-purple-300/60 uppercase tracking-widest mb-1">Şu an Oynuyor</p>
+                    <p id="game-name" class="font-bold text-white text-sm truncate">Oyun Adı</p>
+                    <p id="game-details" class="text-xs text-purple-400 truncate">Oyunda</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GÖRÜNTÜLENME SAYACI -->
+        <div class="mt-8 pt-4 border-t border-purple-500/20 flex justify-center items-center gap-2 text-xs text-purple-300/60 font-mono">
+            <i class="fa-solid fa-eye animate-pulse"></i>
+            <span>PROFILE VIEWS:</span>
+            <img src="https://hits.sh/hakanastily.com.svg?style=flat-square&label=+&color=a855f7" alt="Sayaç" class="h-4 opacity-80 rounded">
+        </div>
+    </div>
+
+    <!-- SCRIPT: LANYARD (DISCORD & SPOTIFY) -->
+    <script>
+        const discordId = "425665649260363786";
+
+        function updateActivities() {
+            fetch(`https://api.lanyard.rest/v1/users/${discordId}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (!data.success) return;
+
+                    const spotifyCard = document.getElementById('spotify-card');
+                    if (data.data.spotify) {
+                        document.getElementById('song-name').textContent = data.data.spotify.song;
+                        document.getElementById('artist-name').textContent = data.data.spotify.artist;
+                        spotifyCard.classList.remove('hidden');
+                    } else {
+                        spotifyCard.classList.add('hidden');
+                    }
+
+                    const gameCard = document.getElementById('game-card');
+                    const gameActivity = data.data.activities.find(activity => activity.type === 0);
+                    
+                    if (gameActivity) {
+                        document.getElementById('game-name').textContent = gameActivity.name;
+                        document.getElementById('game-details').textContent = gameActivity.details || "Oyun Oynuyor";
+                        gameCard.classList.remove('hidden');
+                    } else {
+                        gameCard.classList.add('hidden');
+                    }
+                })
+                .catch(err => console.log("Veri çekilemedi:", err));
+        }
+
+        updateActivities();
+        setInterval(updateActivities, 5000);
+    </script>
     
-    <div id="spotify-card" class="p-4 rounded-xl bg-black/40 border border-purple-500/30 hidden flex items-center gap-4 backdrop-blur-md transition-all shadow-[0_0_15px_rgba(168,85,247,0.1)]">
-        <i class="fa-brands fa-spotify text-purple-500 text-3xl animate-pulse drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]"></i>
-        <div class="text-left w-full overflow-hidden">
-            <p class="text-[10px] text-purple-300/60 uppercase tracking-widest mb-1">Şu an Spotify'da</p>
-            <p id="song-name" class="font-bold text-white text-sm truncate">Şarkı Adı</p>
-            <p id="artist-name" class="text-xs text-purple-400 truncate">Sanatçı</p>
-        </div>
-    </div>
-
-    <div id="game-card" class="p-4 rounded-xl bg-black/40 border border-purple-500/30 hidden flex items-center gap-4 backdrop-blur-md transition-all shadow-[0_0_15px_rgba(168,85,247,0.1)]">
-        <i class="fa-solid fa-gamepad text-purple-500 text-3xl animate-pulse drop-shadow-[0_0_8px_rgba(168,85,247,0.6)]"></i>
-        <div class="text-left w-full overflow-hidden">
-            <p class="text-[10px] text-purple-300/60 uppercase tracking-widest mb-1">Şu an Oynuyor</p>
-            <p id="game-name" class="font-bold text-white text-sm truncate">Oyun Adı</p>
-            <p id="game-details" class="text-xs text-purple-400 truncate">Oyunda</p>
-        </div>
-    </div>
-         
-<script>
-    const discordId = "425665649260363786";
-
-    function updateActivities() {
-        fetch(`https://api.lanyard.rest/v1/users/${discordId}`)
-            .then(res => res.json())
-            .then(data => {
-                if (!data.success) return;
-
-                const spotifyCard = document.getElementById('spotify-card');
-                if (data.data.spotify) {
-                    document.getElementById('song-name').textContent = data.data.spotify.song;
-                    document.getElementById('artist-name').textContent = data.data.spotify.artist;
-                    spotifyCard.classList.remove('hidden');
-                } else {
-                    spotifyCard.classList.add('hidden');
-                }
-
-                const gameCard = document.getElementById('game-card');
-                const gameActivity = data.data.activities.find(activity => activity.type === 0);
-                
-                if (gameActivity) {
-                    document.getElementById('game-name').textContent = gameActivity.name;
-                    document.getElementById('game-details').textContent = gameActivity.details || "Oyun Oynuyor";
-                    gameCard.classList.remove('hidden');
-                } else {
-                    gameCard.classList.add('hidden');
-                }
-            })
-            .catch(err => console.log("Veri çekilemedi:", err));
-    }
-
-    updateActivities();
-    setInterval(updateActivities, 5000);
-</script>
-<div class="mt-8 pt-4 border-t border-purple-500/20 flex justify-center items-center gap-2 text-xs text-purple-300/60 font-mono">
-        <i class="fa-solid fa-eye animate-pulse"></i>
-        <span>PROFILE VIEWS:</span>
-        <img src="https://hits.sh/hakanastily.com.svg?style=flat-square&label=+&color=a855f7" alt="Sayaç" class="h-4 opacity-80 rounded">
-    </div>
-
+    <!-- SCRIPT: YAZI EFEKTİ -->
     <script>
         const texts = ["Not Zenin?, Huh!"];
         let count = 0;
@@ -178,52 +205,6 @@
             
             setTimeout(type, 100);
         })();
-    </script>
-<script>
-        const streamStatus = {
-          youtube: {
-                isLive: true,
-                url: "https://youtube.com/@hakanastily/live",
-                color: "text-gray-400 hover:text-purple-500", 
-                icon: '<i class="fa-brands fa-youtube text-2xl"></i>'
-            },
-      kick: {
-                isLive: true,
-                url: "https://kick.com/SENIN_KANALIN",
-                color: "text-gray-400 hover:text-purple-500",
-                icon: '<svg class="h-[1.15em] w-auto fill-current inline-block align-middle" viewBox="2 2 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M 2 2 H 8 V 8 H 14 V 2 H 22 V 10 H 18 V 14 H 22 V 22 H 14 V 16 H 8 V 22 H 2 Z"/></svg>'
-            },
-            tiktok: {
-                isLive: true,
-                url: "https://tiktok.com/@hakntechs/live",
-                color: "text-gray-400 hover:text-purple-500",
-                icon: '<i class="fa-brands fa-tiktok text-2xl"></i>'
-            }
-        };
-
-        const platformContainer = document.getElementById('live-platforms');
-        let isAnyLive = false;
-
-        for (const [platform, data] of Object.entries(streamStatus)) {
-            if (data.isLive) {
-                isAnyLive = true;
-                const link = document.createElement('a');
-                link.href = data.url;
-                link.target = "_blank";
-                link.className = `transition-colors duration-300 transform hover:scale-110 ${data.color}`;
-                link.innerHTML = data.icon;
-                platformContainer.appendChild(link);
-            }
-        }
-
-        if (isAnyLive) {
-            document.getElementById('live-ring-1').classList.remove('hidden');
-            document.getElementById('live-ring-2').classList.remove('hidden');
-            document.getElementById('live-badge').classList.remove('hidden');
-            
-            const pp = document.getElementById('profile-pic');
-            pp.classList.add('shadow-[0_0_20px_rgba(168,85,247,0.8)]', 'border-purple-500');
-        }
     </script>
 </body>
 </html>
