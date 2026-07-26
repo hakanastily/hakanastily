@@ -194,7 +194,7 @@
                 icon: '<i class="fa-brands fa-youtube text-2xl"></i>'
             },
             kick: {
-                isLive: false,
+                isLive: true,
                 url: "https://kick.com/hakanastily",
                 // Resim kullanacağımız için renk yerine opaklık (saydamlık) efekti veriyoruz
                 color: "opacity-50 hover:opacity-100",
@@ -215,7 +215,7 @@
         // Ayarları kontrol et ve ikonları yerleştir
         for (const [platform, data] of Object.entries(streamStatus)) {
             if (data.isLive) {
-                isAnyLive = false;
+                isAnyLive = true;
                 const link = document.createElement('a');
                 link.href = data.url;
                 link.target = "_blank";
