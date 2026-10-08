@@ -195,7 +195,7 @@
 
     </div>
 
-    <!-- POPUP (MODAL) EKRANI -->
+    <!-- POPUP (MODAL) EKRANI (İkonlu Versiyon) -->
     <div id="equipment-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
         <!-- Arka Plan Blur -->
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer transition-opacity" onclick="toggleEquipmentModal()"></div>
@@ -214,43 +214,43 @@
             <div class="space-y-6 text-left">
                 <!-- PC BİLEŞENLERİ -->
                 <div class="bg-black/30 p-4 rounded-xl border border-purple-500/10 hover:border-purple-500/30 transition-colors">
-                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-purple-500/20 pb-2">
                         <i class="fa-solid fa-server"></i> Kasa & Donanım
                     </h3>
-                    <ul class="text-[13px] text-gray-300 space-y-2 font-mono">
-                        <li><span class="text-purple-300 font-semibold mr-1">CPU:</span> AMD Ryzen 7 7800X3D</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">GPU:</span> Sapphire Pulse Radeon RX 9070 XT</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">ANAKART:</span> Gigabyte X870 GAMING WIFI6</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">RAM:</span> 32 GB DDR5</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">SOĞUTMA:</span> DeepCool LE360 V2 AIO</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">M.2 SSD:</span> 1 TB Crucial P3 Plus PCIe 4.0</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">PSU:</span> High Power 1000W Gold</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">KASA:</span> NZXT H6 Flow</li>
+                    <ul class="text-[13px] text-gray-300 space-y-3 font-mono">
+                        <li class="flex items-center"><i class="fa-solid fa-microchip text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">CPU:</span> AMD Ryzen 7 7800X3D</li>
+                        <li class="flex items-center"><i class="fa-solid fa-video text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">GPU:</span> Sapphire Pulse Radeon RX 9070 XT</li>
+                        <li class="flex items-center"><i class="fa-solid fa-chess-board text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">ANAKART:</span> Gigabyte X870 GAMING WIFI6</li>
+                        <li class="flex items-center"><i class="fa-solid fa-memory text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">RAM:</span> 32 GB DDR5</li>
+                        <li class="flex items-center"><i class="fa-solid fa-fan text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">SOĞUTMA:</span> DeepCool LE360 V2 AIO</li>
+                        <li class="flex items-center"><i class="fa-solid fa-hard-drive text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">M.2 SSD:</span> 1 TB Crucial P3 Plus PCIe 4.0</li>
+                        <li class="flex items-center"><i class="fa-solid fa-plug text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">PSU:</span> High Power 1000W Gold</li>
+                        <li class="flex items-center"><i class="fa-solid fa-box text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">KASA:</span> NZXT H6 Flow</li>
                     </ul>
                 </div>
 
                 <!-- MONİTÖRLER -->
                 <div class="bg-black/30 p-4 rounded-xl border border-purple-500/10 hover:border-purple-500/30 transition-colors">
-                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-purple-500/20 pb-2">
                         <i class="fa-solid fa-desktop"></i> Monitörler
                     </h3>
-                    <ul class="text-[13px] text-gray-300 space-y-2 font-mono">
-                        <li><span class="text-purple-300 font-semibold mr-1">ANA:</span> James Donkey Q70 2K 210Hz</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">YAN:</span> MSI MAG 244F 200Hz</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">YAN:</span> AOC 24G50Z2</li>
+                    <ul class="text-[13px] text-gray-300 space-y-3 font-mono">
+                        <li class="flex items-center"><i class="fa-solid fa-desktop text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">ANA:</span> James Donkey Q70 2K 210Hz</li>
+                        <li class="flex items-center"><i class="fa-solid fa-desktop text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">YAN:</span> MSI MAG 244F 200Hz</li>
+                        <li class="flex items-center"><i class="fa-solid fa-desktop text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">YAN:</span> AOC 24G50Z2</li>
                     </ul>
                 </div>
 
                 <!-- ÇEVRE BİRİMLERİ VE SES -->
                 <div class="bg-black/30 p-4 rounded-xl border border-purple-500/10 hover:border-purple-500/30 transition-colors">
-                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-purple-500/20 pb-2">
                         <i class="fa-solid fa-headphones"></i> Çevre Birimleri
                     </h3>
-                    <ul class="text-[13px] text-gray-300 space-y-2 font-mono">
-                        <li><span class="text-purple-300 font-semibold mr-1">KLAVYE:</span> Wraith W75 Analog</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">KULAKLIK:</span> ATK N9 Ultra / evox IEM</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">MİKROFON:</span> NZXT Capsule Mini (Havit GK60 Boom Arm)</li>
-                        <li><span class="text-purple-300 font-semibold mr-1">SES KARTI:</span> NICEHCK NK1 Max</li>
+                    <ul class="text-[13px] text-gray-300 space-y-3 font-mono">
+                        <li class="flex items-center"><i class="fa-solid fa-keyboard text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">KLAVYE:</span> Wraith W75 Analog</li>
+                        <li class="flex items-center"><i class="fa-solid fa-headset text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">KULAKLIK:</span> ATK N9 Ultra / evox IEM</li>
+                        <li class="flex items-center"><i class="fa-solid fa-microphone text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">MİKROFON:</span> NZXT Capsule Mini (Havit GK60)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-sliders text-purple-500 w-5"></i> <span class="text-purple-300 font-semibold mr-2">SES KARTI:</span> NICEHCK NK1 Max</li>
                     </ul>
                 </div>
             </div>
