@@ -192,7 +192,7 @@
         <!-- Arka Plan Blur -->
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer transition-opacity" onclick="toggleEquipmentModal()"></div>
         
-        <!-- Ana Popup Kutusu (Çok daha genişletildi - max-w-3xl) -->
+        <!-- Ana Popup Kutusu -->
         <div class="glass-card relative w-full max-w-3xl p-6 rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.4)] transform transition-all border border-purple-500/30 overflow-hidden max-h-[85vh] overflow-y-auto custom-scrollbar z-10">
             
             <button onclick="toggleEquipmentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-purple-500 transition-colors bg-black/40 rounded-full w-8 h-8 flex items-center justify-center border border-purple-500/20 hover:border-purple-500/50 z-20">
@@ -203,17 +203,17 @@
                 <i class="fa-solid fa-computer text-purple-500"></i> Setup Vitrini
             </h2>
 
-            <!-- SETUP ANA FOTOĞRAFI (KAYDIRMALI GALERİ / CAROUSEL) -->
-            <div class="w-full mb-8 rounded-xl overflow-hidden border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)] relative group">
+            <!-- SETUP ANA FOTOĞRAFI (DİNAMİK BOYUTLU KAYDIRMALI GALERİ) -->
+            <!-- Wrapper'a "transition-[height] duration-500 ease-in-out" eklendi -->
+            <div id="carousel-wrapper" class="w-full mb-8 rounded-xl overflow-hidden border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.2)] relative group transition-[height] duration-500 ease-in-out bg-black/20">
                 
-                <!-- Fotoğraf Konteyneri (İçindeki fotolar JS ile kaydırılacak) -->
-                <div id="setup-carousel" class="flex transition-transform duration-700 ease-in-out w-full h-48 sm:h-72">
-                    <!-- BURAYA 5 ADET FOTOĞRAFINI KOY -->
-                    <img src="setup1.png" class="w-full h-full object-cover flex-shrink-0" alt="Setup 1">
-                    <img src="setup2.png" class="w-full h-full object-cover flex-shrink-0" alt="Setup 2">
-                    <img src="setup3.png" class="w-full h-full object-cover flex-shrink-0" alt="Setup 3">
-                    <img src="setup4.png" class="w-full h-full object-cover flex-shrink-0" alt="Setup 4">
-                    <img src="setup5.png" class="w-full h-full object-cover flex-shrink-0" alt="Setup 5">
+                <!-- İçindeki fotolar w-full h-auto oldu, böylece kendi boy oranlarını korurlar -->
+                <div id="setup-carousel" class="flex transition-transform duration-700 ease-in-out w-full items-start">
+                    <img src="setup1.png" class="w-full h-auto flex-shrink-0" alt="Setup 1">
+                    <img src="setup2.png" class="w-full h-auto flex-shrink-0" alt="Setup 2">
+                    <img src="setup3.png" class="w-full h-auto flex-shrink-0" alt="Setup 3">
+                    <img src="setup4.png" class="w-full h-auto flex-shrink-0" alt="Setup 4">
+                    <img src="setup5.png" class="w-full h-auto flex-shrink-0" alt="Setup 5">
                 </div>
 
                 <!-- Alt Kısım Karartma ve Yazı -->
@@ -503,33 +503,29 @@
             setTimeout(type, 100);
         })();
 
-        // --- 2. MODAL AÇ/KAPAT ---
-        function toggleEquipmentModal() {
-            const modal = document.getElementById('equipment-modal');
-            if (modal.classList.contains('hidden')) {
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-            } else {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }
-        }
-
-        // --- 3. CAROUSEL (FOTOĞRAF KAYDIRICI) ---
+        // --- 2. CAROUSEL (FOTOĞRAF KAYDIRICI) MANTIĞI ---
         let currentSlide = 0;
-        const totalSlides = 5; // Toplam koyduğun fotoğraf sayısı (setup1, setup2... setup5)
+        const totalSlides = 5; 
         let slideInterval;
 
         function updateCarousel() {
             const container = document.getElementById('setup-carousel');
-            // Yüzdelik olarak kaydırma (-0%, -100%, -200% vb.)
+            const wrapper = document.getElementById('carousel-wrapper');
+            const slides = container.querySelectorAll('img');
+            
+            // X ekseninde fotoları kaydır
             container.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // O anki fotoğrafın boyuna göre çerçevenin yüksekliğini animasyonla güncelle
+            if(slides[currentSlide] && slides[currentSlide].clientHeight > 0) {
+                wrapper.style.height = slides[currentSlide].clientHeight + 'px';
+            }
         }
 
         function nextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
-            resetInterval(); // El ile tıklanınca 5 saniyelik süreyi sıfırla
+            resetInterval();
         }
 
         function prevSlide() {
@@ -539,7 +535,7 @@
         }
 
         function startInterval() {
-            slideInterval = setInterval(nextSlide, 5000); // 5000ms = 5 saniye
+            slideInterval = setInterval(nextSlide, 5000); 
         }
 
         function resetInterval() {
@@ -547,8 +543,42 @@
             startInterval();
         }
 
-        // Sayfa yüklendiğinde otomatik kaymayı başlat
-        startInterval();
+        // Pencere boyutu değiştiğinde slider yüksekliğini tekrar hesapla
+        window.addEventListener('resize', () => {
+            const modal = document.getElementById('equipment-modal');
+            if (!modal.classList.contains('hidden')) {
+                updateCarousel();
+            }
+        });
+
+        // Tüm fotoğraflar yüklendiğinde yüksekliği hesapla
+        window.addEventListener('load', () => {
+            const slides = document.querySelectorAll('#setup-carousel img');
+            slides.forEach(img => {
+                img.addEventListener('load', () => {
+                    const modal = document.getElementById('equipment-modal');
+                    if (!modal.classList.contains('hidden')) {
+                        updateCarousel();
+                    }
+                });
+            });
+            startInterval();
+        });
+
+        // --- 3. MODAL AÇ/KAPAT ---
+        function toggleEquipmentModal() {
+            const modal = document.getElementById('equipment-modal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                
+                // Modal yeni açıldığında display:flex tetiklensin diye çok ufak bir gecikmeyle boyutu ayarlıyoruz
+                setTimeout(updateCarousel, 10);
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
     </script>
 </body>
 </html>
