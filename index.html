@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hakanastily</title>
@@ -38,21 +37,49 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
-    </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MBB4N77HMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-MBB4N77HMS');
-</script>
+        /* Özel Mor Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(168, 85, 247, 0.5);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(168, 85, 247, 0.8);
+        }
+    </style>
 </head>
 <body class="h-screen w-full flex items-center justify-center overflow-hidden font-sans">
-    <img src="hxh.png" class="hidden md:block absolute left-10 top-1/2 -translate-y-1/2 w-64 h-auto rounded-2xl opacity-60 hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(168,85,247,0.3)] object-cover z-0" alt="HXH">
-    <img src="toji.png" class="hidden md:block absolute right-10 top-1/2 -translate-y-1/2 w-64 h-auto rounded-2xl opacity-60 hover:opacity-100 transition-opacity duration-500 shadow-[0_0_20px_rgba(168,85,247,0.3)] object-cover z-0" alt="Toji">
     
-    <div class="glass-card p-8 rounded-3xl max-w-sm w-full text-center transform transition duration-500 hover:scale-[1.02]">
+    <!-- SOL TARAF: HOVER İLE YANINDAN FOTOĞRAFLAR ÇIKAN ANA GÖRSEL -->
+    <div class="hidden md:flex absolute left-10 top-1/2 -translate-y-1/2 items-center gap-3 group z-0">
+        <img src="hxh.png" class="w-64 h-auto rounded-2xl opacity-60 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_20px_rgba(168,85,247,0.3)] object-cover cursor-pointer" alt="HXH">
+        
+        <div class="flex items-center gap-3 opacity-0 translate-x-[-20px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 pointer-events-none group-hover:pointer-events-auto">
+            <img src="foto1.png" class="w-36 h-auto rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.4)] object-cover border border-purple-500/30 transform hover:scale-105 transition duration-300" alt="Ekstra 1">
+            <img src="foto2.png" class="w-36 h-auto rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.4)] object-cover border border-purple-500/30 transform hover:scale-105 transition duration-300" alt="Ekstra 2">
+            <img src="foto3.png" class="w-36 h-auto rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.4)] object-cover border border-purple-500/30 transform hover:scale-105 transition duration-300" alt="Ekstra 3">
+        </div>
+    </div>
+
+    <!-- SAĞ TARAF: HOVER İLE YANINDAN FOTOĞRAFLAR ÇIKAN ANA GÖRSEL -->
+    <div class="hidden md:flex absolute right-10 top-1/2 -translate-y-1/2 items-center flex-row-reverse gap-3 group z-0">
+        <img src="toji.png" class="w-64 h-auto rounded-2xl opacity-60 group-hover:opacity-100 transition-all duration-500 shadow-[0_0_20px_rgba(168,85,247,0.3)] object-cover cursor-pointer" alt="Toji">
+        
+        <div class="flex items-center flex-row-reverse gap-3 opacity-0 translate-x-[20px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 pointer-events-none group-hover:pointer-events-auto">
+            <img src="foto4.png" class="w-36 h-auto rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.4)] object-cover border border-purple-500/30 transform hover:scale-105 transition duration-300" alt="Ekstra 4">
+            <img src="foto5.png" class="w-36 h-auto rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.4)] object-cover border border-purple-500/30 transform hover:scale-105 transition duration-300" alt="Ekstra 5">
+            <img src="foto6.png" class="w-36 h-auto rounded-xl shadow-[0_0_15px_rgba(168,85,247,0.4)] object-cover border border-purple-500/30 transform hover:scale-110 transition duration-300" alt="Ekstra 6">
+        </div>
+    </div>
+    
+    <div class="glass-card p-8 rounded-3xl max-w-sm w-full text-center transform transition duration-500 hover:scale-[1.02] z-10 relative">
         
         <!-- Profil Fotoğrafı -->
         <div class="relative w-32 h-32 mx-auto mb-6">
@@ -77,7 +104,7 @@
             <!-- KICK -->
             <div class="relative flex flex-col items-center">
                 <span class="absolute -top-4 bg-[#8b5cf6] text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_0_8px_rgba(139,92,246,0.8)] animate-pulse tracking-wider z-10">LIVE</span>
-                <a href="https://kick.com/hakanastily" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl flex items-center justify-center">
+                <a href="https://kick.com/SENIN_KANALIN" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl flex items-center justify-center">
                     <svg class="h-[1em] w-[1em] fill-current translate-y-[3px]" viewBox="2 2 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path d="M 2 2 H 8 V 8 H 14 V 2 H 22 V 10 H 18 V 14 H 22 V 22 H 14 V 16 H 8 V 22 H 2 Z"/>
                     </svg>
@@ -94,14 +121,14 @@
 
             <!-- DISCORD -->
             <div class="relative flex flex-col items-center">
-                <a href="https://discord.gg/nuhungemisii" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
+                <a href="https://discord.gg/nuhungemisi" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
                     <i class="fa-brands fa-discord"></i>
                 </a>
             </div>
 
-            <!-- SPOTIFY (LIVE etiketi kaldırıldı) -->
+            <!-- SPOTIFY -->
             <div class="relative flex flex-col items-center">
-                <a href="https://open.spotify.com/user/niog6niq1svjh8r5t6w60963r" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
+                <a href="https://open.spotify.com/user/SENIN_SPOTIFY_PROFIL_LINKIN" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
                     <i class="fa-brands fa-spotify"></i>
                 </a>
             </div>
@@ -116,7 +143,7 @@
             <!-- TIKTOK -->
             <div class="relative flex flex-col items-center">
                 <span class="absolute -top-4 bg-[#8b5cf6] text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-[0_0_8px_rgba(139,92,246,0.8)] animate-pulse tracking-wider z-10">LIVE</span>
-                <a href="https://tiktok.com/@hakanastily" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
+                <a href="https://tiktok.com/@hakntechs" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors duration-300 transform hover:scale-110 text-2xl">
                     <i class="fa-brands fa-tiktok"></i>
                 </a>
             </div>
@@ -152,10 +179,81 @@
         </div>
 
         <!-- GÖRÜNTÜLENME SAYACI -->
-        <div class="mt-8 pt-4 border-t border-purple-500/20 flex justify-center items-center gap-2 text-xs text-purple-300/60 font-mono">
+        <div class="mt-6 pt-4 border-t border-purple-500/20 flex justify-center items-center gap-2 text-xs text-purple-300/60 font-mono">
             <i class="fa-solid fa-eye animate-pulse"></i>
             <span>PROFILE VIEWS:</span>
             <img src="https://hits.sh/hakanastily.com.svg?style=flat-square&label=+&color=a855f7" alt="Sayaç" class="h-4 opacity-80 rounded">
+        </div>
+
+        <!-- EKİPMANLAR BUTONU -->
+        <div class="mt-4">
+            <button onclick="toggleEquipmentModal()" class="group flex items-center justify-center w-full py-2.5 px-4 rounded-xl bg-purple-900/10 hover:bg-purple-900/30 transition duration-300 border border-purple-500/20 hover:border-purple-500/50 text-xs font-medium text-purple-200 shadow-[0_0_10px_rgba(168,85,247,0.05)]">
+                <i class="fa-solid fa-microchip mr-2 text-purple-400 group-hover:text-purple-300 transition animate-pulse"></i> 
+                <span class="tracking-wider uppercase">Sistem & Ekipmanlar</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- POPUP (MODAL) EKRANI -->
+    <div id="equipment-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <!-- Arka Plan Blur -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer transition-opacity" onclick="toggleEquipmentModal()"></div>
+        
+        <!-- Ana Popup Kutusu -->
+        <div class="glass-card relative w-full max-w-lg p-6 rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.4)] transform transition-all border border-purple-500/30 overflow-hidden max-h-[85vh] overflow-y-auto custom-scrollbar z-10">
+            
+            <button onclick="toggleEquipmentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-purple-500 transition-colors bg-black/40 rounded-full w-8 h-8 flex items-center justify-center border border-purple-500/20 hover:border-purple-500/50">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <h2 class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-300 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-computer text-purple-500"></i> Setup
+            </h2>
+
+            <div class="space-y-6 text-left">
+                <!-- PC BİLEŞENLERİ -->
+                <div class="bg-black/30 p-4 rounded-xl border border-purple-500/10 hover:border-purple-500/30 transition-colors">
+                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-server"></i> Kasa & Donanım
+                    </h3>
+                    <ul class="text-[13px] text-gray-300 space-y-2 font-mono">
+                        <li><span class="text-purple-300 font-semibold mr-1">CPU:</span> AMD Ryzen 7 7800X3D</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">GPU:</span> Sapphire Pulse Radeon RX 9070 XT</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">ANAKART:</span> Gigabyte X870 GAMING WIFI6</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">RAM:</span> 32 GB DDR5</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">SOĞUTMA:</span> DeepCool LE360 V2 AIO</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">M.2 SSD:</span> 1 TB Crucial P3 Plus PCIe 4.0</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">PSU:</span> High Power 1000W Gold</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">KASA:</span> NZXT H6 Flow</li>
+                    </ul>
+                </div>
+
+                <!-- MONİTÖRLER -->
+                <div class="bg-black/30 p-4 rounded-xl border border-purple-500/10 hover:border-purple-500/30 transition-colors">
+                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-desktop"></i> Monitörler
+                    </h3>
+                    <ul class="text-[13px] text-gray-300 space-y-2 font-mono">
+                        <li><span class="text-purple-300 font-semibold mr-1">ANA:</span> James Donkey Q70 2K 210Hz</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">YAN:</span> MSI MAG 244F 200Hz</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">YAN:</span> AOC 24G50Z2</li>
+                    </ul>
+                </div>
+
+                <!-- ÇEVRE BİRİMLERİ VE SES -->
+                <div class="bg-black/30 p-4 rounded-xl border border-purple-500/10 hover:border-purple-500/30 transition-colors">
+                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-headphones"></i> Çevre Birimleri
+                    </h3>
+                    <ul class="text-[13px] text-gray-300 space-y-2 font-mono">
+                        <li><span class="text-purple-300 font-semibold mr-1">KLAVYE:</span> Wraith W75 Analog</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">KULAKLIK:</span> ATK N9 Ultra / evox IEM</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">MİKROFON:</span> NZXT Capsule Mini (Havit GK60 Boom Arm)</li>
+                        <li><span class="text-purple-300 font-semibold mr-1">SES KARTI:</span> NICEHCK NK1 Max</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -196,7 +294,7 @@
         setInterval(updateActivities, 5000);
     </script>
     
-    <!-- SCRIPT: YAZI EFEKTİ -->
+    <!-- SCRIPT: YAZI EFEKTİ & MODAL TOGGLE -->
     <script>
         const texts = ["Not Zenin?, Huh!"];
         let count = 0;
@@ -222,6 +320,18 @@
             
             setTimeout(type, 100);
         })();
+
+        // Ekipman Menüsü Aç/Kapat
+        function toggleEquipmentModal() {
+            const modal = document.getElementById('equipment-modal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            } else {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
     </script>
 </body>
 </html>
