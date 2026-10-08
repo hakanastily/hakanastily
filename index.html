@@ -187,13 +187,13 @@
 
     </div>
 
-    <!-- POPUP (MODAL) EKRANI (FOTOĞRAFLI VİTRİN VERSİYONU) -->
+    <!-- POPUP (MODAL) EKRANI (DEVASA VİTRİN) -->
     <div id="equipment-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
         <!-- Arka Plan Blur -->
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer transition-opacity" onclick="toggleEquipmentModal()"></div>
         
-        <!-- Ana Popup Kutusu (Biraz daha genişletildi) -->
-        <div class="glass-card relative w-full max-w-2xl p-6 rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.4)] transform transition-all border border-purple-500/30 overflow-hidden max-h-[85vh] overflow-y-auto custom-scrollbar z-10">
+        <!-- Ana Popup Kutusu (Çok daha genişletildi - max-w-3xl) -->
+        <div class="glass-card relative w-full max-w-3xl p-6 rounded-2xl shadow-[0_0_40px_rgba(168,85,247,0.4)] transform transition-all border border-purple-500/30 overflow-hidden max-h-[85vh] overflow-y-auto custom-scrollbar z-10">
             
             <button onclick="toggleEquipmentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-purple-500 transition-colors bg-black/40 rounded-full w-8 h-8 flex items-center justify-center border border-purple-500/20 hover:border-purple-500/50 z-20">
                 <i class="fa-solid fa-xmark text-lg"></i>
@@ -203,105 +203,62 @@
                 <i class="fa-solid fa-computer text-purple-500"></i> Setup Vitrini
             </h2>
 
-            <div class="space-y-8 text-left">
+            <!-- TÜM İÇERİKLER -->
+            <div class="space-y-10 text-left">
                 
                 <!-- PC BİLEŞENLERİ KATEGORİSİ -->
                 <div>
                     <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-purple-500/20 pb-2">
                         <i class="fa-solid fa-server"></i> Kasa & Donanım
                     </h3>
-                    
-                    <!-- 2 Sütunlu (Mobilde) / 3 Sütunlu (PC'de) Fotoğraf Izgarası -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                         <!-- İŞLEMCİ -->
                         <a href="ISLEMCI_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="islemci_foto.png" alt="CPU" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="islemci_foto.png" alt="CPU" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">İşlemci</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">AMD Ryzen 7<br>7800X3D</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">AMD Ryzen 7<br>7800X3D</span>
                         </a>
-
                         <!-- EKRAN KARTI -->
                         <a href="EKRANKARTI_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="ekrankarti_foto.png" alt="GPU" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="ekrankarti_foto.png" alt="GPU" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ekran Kartı</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">Sapphire Pulse<br>RX 9070 XT</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Sapphire Pulse<br>RX 9070 XT</span>
                         </a>
-
                         <!-- ANAKART -->
                         <a href="ANAKART_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="anakart_foto.png" alt="Anakart" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="anakart_foto.png" alt="Anakart" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Anakart</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">Gigabyte X870<br>GAMING WIFI6</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Gigabyte X870<br>GAMING WIFI6</span>
                         </a>
-
                         <!-- RAM -->
                         <a href="RAM_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="ram_foto.png" alt="RAM" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="ram_foto.png" alt="RAM" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">RAM</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">32 GB<br>DDR5 Bellek</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">32 GB<br>DDR5 Bellek</span>
                         </a>
-
                         <!-- SOĞUTUCU -->
                         <a href="SOGUTUCU_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="sogutucu_foto.png" alt="Soğutucu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="sogutucu_foto.png" alt="Soğutucu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Sıvı Soğutma</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">DeepCool<br>LE360 V2</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">DeepCool<br>LE360 V2</span>
                         </a>
-
+                        <!-- SSD -->
+                        <a href="SSD_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="ssd_foto.png" alt="SSD" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">M.2 SSD</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">1TB Crucial P3<br>Plus PCIe 4.0</span>
+                        </a>
+                        <!-- PSU -->
+                        <a href="PSU_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="psu_foto.png" alt="PSU" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Güç Kaynağı</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">High Power<br>1000W 80+ Gold</span>
+                        </a>
                         <!-- KASA -->
                         <a href="KASA_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="kasa_foto.png" alt="Kasa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="kasa_foto.png" alt="Kasa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kasa</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">NZXT<br>H6 Flow</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- MONİTÖRLER KATEGORİSİ -->
-                <div>
-                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-purple-500/20 pb-2">
-                        <i class="fa-solid fa-desktop"></i> Monitörler
-                    </h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        
-                        <!-- ANA MONİTÖR -->
-                        <a href="MONITOR1_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="monitor1_foto.png" alt="Ana Monitör" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
-                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ana Monitör</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">James Donkey Q70<br>2K 210Hz</span>
-                        </a>
-
-                        <!-- YAN MONİTÖR -->
-                        <a href="MONITOR2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="monitor2_foto.png" alt="Yan Monitör" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
-                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Yan Monitör</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">MSI MAG 244F<br>200Hz</span>
-                        </a>
-
-                        <!-- YAN MONİTÖR 2 -->
-                        <a href="MONITOR3_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="monitor3_foto.png" alt="Yan Monitör 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
-                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Yan Monitör</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">AOC<br>24G50Z2</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">NZXT<br>H6 Flow</span>
                         </a>
                     </div>
                 </div>
@@ -309,35 +266,122 @@
                 <!-- ÇEVRE BİRİMLERİ KATEGORİSİ -->
                 <div>
                     <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-purple-500/20 pb-2">
-                        <i class="fa-solid fa-headphones"></i> Çevre Birimleri
+                        <i class="fa-solid fa-gamepad"></i> Çevre Birimleri
                     </h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                         <!-- KLAVYE -->
                         <a href="KLAVYE_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="klavye_foto.png" alt="Klavye" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="klavye_foto.png" alt="Klavye" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Klavye</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">Wraith W75<br>Analog</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK x QK<br>HEX80</span>
                         </a>
-
-                        <!-- KULAKLIK -->
-                        <a href="KULAKLIK_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="kulaklik_foto.png" alt="Kulaklık" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
-                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kulaklık</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">ATK N9 Ultra<br>& evox IEM</span>
+                        <!-- MOUSE -->
+                        <a href="MOUSE_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mouse_foto.png" alt="Mouse" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mouse</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK<br>A7X Ultra</span>
                         </a>
-
+                        <!-- MOUSEPAD -->
+                        <a href="MOUSEPAD_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mousepad_foto.png" alt="Mousepad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mousepad</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">3 Adet<br>Çeşitli Mousepad</span>
+                        </a>
+                        <!-- KULAKLIK 1 -->
+                        <a href="KULAKLIK1_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="kulaklik1_foto.png" alt="Kulaklık 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kulaküstü Kulaklık</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK<br>N9 Ultra</span>
+                        </a>
+                        <!-- KULAKLIK 2 -->
+                        <a href="KULAKLIK2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="kulaklik2_foto.png" alt="Kulaklık 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kulakiçi Kulaklık</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">evox<br>IEM</span>
+                        </a>
                         <!-- MİKROFON -->
                         <a href="MIKROFON_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center">
-                                <img src="mikrofon_foto.png" alt="Mikrofon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            </div>
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mikrofon_foto.png" alt="Mikrofon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mikrofon</span>
-                            <span class="text-xs text-gray-200 font-mono leading-tight">NZXT Capsule Mini<br>Havit Boom Arm</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Havit<br>Yayıncı Mikrofonu</span>
+                        </a>
+                        <!-- MİKROFON KOLU -->
+                        <a href="BOOMARM_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="boomarm_foto.png" alt="Boom Arm" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mikrofon Standı</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Amortisörlü<br>Mikrofon Kolu</span>
+                        </a>
+                        <!-- SES KARTI -->
+                        <a href="SESKARTI_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="seskarti_foto.png" alt="Ses Kartı" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ses Kartı</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">NICEHCK<br>NK1 Max</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- MONİTÖRLER & STANTLAR -->
+                <div>
+                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-purple-500/20 pb-2">
+                        <i class="fa-solid fa-desktop"></i> Monitörler & Stant
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <!-- ANA MONİTÖR -->
+                        <a href="MONITOR1_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="monitor1_foto.png" alt="Ana Monitör" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ana Monitör</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">James Donkey Q70<br>2K 210Hz</span>
+                        </a>
+                        <!-- YAN MONİTÖR -->
+                        <a href="MONITOR2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="monitor2_foto.png" alt="Yan Monitör" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Yan Monitör</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">MSI MAG 244F<br>200Hz</span>
+                        </a>
+                        <!-- YAN MONİTÖR 2 -->
+                        <a href="MONITOR3_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="monitor3_foto.png" alt="Yan Monitör 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Yan Monitör</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">AOC<br>24G50Z2</span>
+                        </a>
+                        <!-- MONİTÖR KOLLARI -->
+                        <a href="MONITORKOLU_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="monitorkolu_foto.png" alt="Monitör Kolları" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Monitör Standı</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">3 Adet<br>Amortisörlü Kol</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- YAYIN, AKSESUAR & DEKOR -->
+                <div>
+                    <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-2 border-b border-purple-500/20 pb-2">
+                        <i class="fa-solid fa-camera"></i> Yayın, Aksesuar & Dekor
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <!-- STREAM DECK -->
+                        <a href="STREAMDECK_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="streamdeck_foto.png" alt="Stream Deck" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Yayın Kontrolü</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Stream Deck<br>Panel</span>
+                        </a>
+                        <!-- GAMEPADS -->
+                        <a href="GAMEPAD_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="gamepad_foto.png" alt="Gamepad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kontrolcü</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">2 Adet<br>Gamepad</span>
+                        </a>
+                        <!-- PIXEL EKRAN -->
+                        <a href="PIXELSCREEN_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="pixelscreen_foto.png" alt="Pixel Ekran" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Dekoratif Işık</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Pixel<br>Ekran (Akıllı)</span>
+                        </a>
+                        <!-- KATANA -->
+                        <a href="KATANA_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="katana_foto.png" alt="Katana" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Dekorasyon</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Eskitme Siyah<br>Katana Kılıç</span>
                         </a>
                     </div>
                 </div>
