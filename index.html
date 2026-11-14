@@ -65,41 +65,6 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: rgba(168, 85, 247, 0.8);
         }
-
-        /* Tab Slider Animasyonları */
-        .tab-content {
-            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
-        
-        .tab-active {
-            transform: translateX(0);
-            opacity: 1;
-            position: relative;
-            pointer-events: auto;
-        }
-
-        .tab-left {
-            transform: translateX(-50px);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .tab-right {
-            transform: translateX(50px);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /* Aktif Tab Butonu Stili */
-        .tab-btn-active {
-            background-color: rgba(168, 85, 247, 0.2);
-            border-color: rgba(168, 85, 247, 0.6);
-            color: #d8b4fe; /* purple-300 */
-        }
     </style>
 </head>
 <body class="h-screen w-full flex items-center justify-center overflow-hidden font-sans">
@@ -325,145 +290,128 @@
                     </div>
                 </div>
 
-                <!-- ÇEVRE BİRİMLERİ KATEGORİSİ (SEKMELİ YAPI) -->
+                <!-- ÇEVRE BİRİMLERİ KATEGORİSİ -->
                 <div>
-                    <!-- BAŞLIK VE TAB BUTONLARI -->
+                    <!-- BAŞLIK VE TELEGRAM BUTONU -->
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-purple-500/20 pb-3 mb-4">
                         <h3 class="text-xs font-bold text-purple-400 uppercase tracking-widest flex items-center gap-2 m-0">
                             <i class="fa-solid fa-gamepad"></i> Çevre Birimleri
                         </h3>
                         
                         <div class="flex bg-black/40 rounded-lg p-1 border border-purple-500/20">
-                            <button onclick="switchTab('active-gear')" id="btn-active-gear" class="flex-1 px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-wider transition-all duration-300 tab-btn-active">
-                                Aktif
+                            <button class="flex-1 px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-wider transition-all duration-300 bg-purple-500/20 border border-purple-500/60 text-purple-300 cursor-default">
+                                Aktif Kullanılanlar
                             </button>
-                            <button onclick="switchTab('old-gear')" id="btn-old-gear" class="flex-1 px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-wider text-gray-400 hover:text-purple-300 transition-all duration-300 border border-transparent">
-                                Önceden Kullanılanlar
-                            </button>
+                            <!-- Buradaki linki kendi Telegram kanalınla değiştir -->
+                            <a href="https://t.me/SENIN_TELEGRAM_KANALIN" target="_blank" class="flex-1 px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-wider text-gray-400 hover:text-purple-300 transition-all duration-300 border border-transparent text-center flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-telegram"></i> Tüm Kullandıklarım
+                            </a>
                         </div>
                     </div>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <!-- KLAVYE 1 (Mevcut) -->
+                        <a href="https://wraithesports.com/products/atk-x-qk-hex80-klavye-manyetik-switch-he" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="klavye_foto.png" alt="Klavye" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Klavye 1</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK x QK<br>HEX80</span>
+                        </a>
+                        <!-- KLAVYE 2 (Mevcut) -->
+                        <a href="KLAVYE2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="klavye2_foto.png" alt="Klavye 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Klavye 2</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Wraith<br>W75 Analog</span>
+                        </a>
+                        <!-- YENİ KLAVYE 3 (Eklenen 1. Yeni Klavye) -->
+                        <a href="YENI_KLAVYE3_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="yeni_klavye3_foto.png" alt="Yeni Klavye 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Klavye 3</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Üçüncü<br>Klavye Modelin</span>
+                        </a>
+                        <!-- YENİ KLAVYE 4 (Eklenen 2. Yeni Klavye) -->
+                        <a href="YENI_KLAVYE4_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="yeni_klavye4_foto.png" alt="Yeni Klavye 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Klavye 4</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Dördüncü<br>Klavye Modelin</span>
+                        </a>
 
-                    <!-- TAB İÇERİKLERİ KONTEYNERİ -->
-                    <div class="relative w-full overflow-hidden" id="tabs-container">
+                        <!-- MOUSE 1 (Mevcut) -->
+                        <a href="https://www.akakce.com/mouse/en-ucuz-mchose-a7x-ultra-mc-a7x-2-siyah-sarjli-makrolu-optik-kablolu-kablosuz-oyuncu-fiyati,1351608766.html" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mouse_foto.png" alt="Mouse 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mouse 1</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Mchose<br>A7X Ultra</span>
+                        </a>
+                        <!-- MOUSE 2 (Mevcut) -->
+                        <a href="MOUSE2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mouse2_foto.png" alt="Mouse 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mouse 2</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK<br>Dragonfly A9</span>
+                        </a>
+                        <!-- MOUSE 3 (Mevcut) -->
+                        <a href="MOUSE3_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mouse3_foto.png" alt="Mouse 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mouse 3</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Glorious<br>Model I</span>
+                        </a>
+                        <!-- YENİ MOUSE 4 (Eklenen 1. Yeni Mouse) -->
+                        <a href="YENI_MOUSE4_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="yeni_mouse4_foto.png" alt="Yeni Mouse 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mouse 4</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Dördüncü<br>Mouse Modelin</span>
+                        </a>
+
+                        <!-- MOUSEPAD 1 -->
+                        <a href="https://wraithesports.com/products/spirit-of-aim-pro-mousepad" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mousepad1_foto.png" alt="Mousepad 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mousepad 1</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Wraith<br>Spirit of Aim Pro</span>
+                        </a>
+                        <!-- MOUSEPAD 2 -->
+                        <a href="https://ulugames.com.tr/products/ulugames-cam-mousepad" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mousepad2_foto.png" alt="Mousepad 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mousepad 2</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Ulugames<br>ONYX GlassPad</span>
+                        </a>
                         
-                        <!-- TAB 1: AKTİF KULLANILANLAR -->
-                        <div id="active-gear" class="tab-content tab-active grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                            <!-- KLAVYE 1 (Mevcut) -->
-                            <a href="https://wraithesports.com/products/atk-x-qk-hex80-klavye-manyetik-switch-he" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="klavye_foto.png" alt="Klavye" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ana Klavye</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK x QK<br>HEX80</span>
-                            </a>
-                            
-                            <!-- KLAVYE 2 -->
-                            <a href="KLAVYE2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="klavye2_foto.png" alt="Klavye 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Klavye 2</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">Pwnage Zenblade<br>V2 Nyomi</span>
-                            </a>
+                        <!-- KULAKLIK 1 -->
+                        <a href="https://wraithesports.com/products/atk-n9-wireless-kulaklik" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="kulaklik1_foto.png" alt="Kulaklık 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kulaküstü Kulaklık</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK<br>N9 Ultra</span>
+                        </a>
+                        <!-- KULAKLIK 2 -->
+                        <a href="https://wraithesports.com/products/wraith-evox-iem-kulaklik" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="kulaklik2_foto.png" alt="Kulaklık 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kulakiçi Kulaklık</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">evox<br>IEM</span>
+                        </a>
 
-                            <!-- MOUSE 1 (Mevcut) -->
-                            <a href="https://www.akakce.com/mouse/en-ucuz-mchose-a7x-ultra-mc-a7x-2-siyah-sarjli-makrolu-optik-kablolu-kablosuz-oyuncu-fiyati,1351608766.html" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mouse_foto.png" alt="Mouse 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ana Mouse</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">Mchose<br>A7X Ultra</span>
-                            </a>
-                            
-                            <!-- MOUSE 2 -->
-                            <a href="MOUSE2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mouse2_foto.png" alt="Mouse 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mouse 2</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK<br>Blazing Sky Ghost</span>
-                            </a>
-                            
-                            <!-- MOUSE 3 -->
-                            <a href="MOUSE3_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mouse3_foto.png" alt="Mouse 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mouse 3</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK<br>Dragonfly A9 Air</span>
-                            </a>
+                        <!-- MİKROFON 1 -->
+                        <a href="https://www.akakce.com/profesyonel-mikrofon/en-ucuz-havit-gamenote-gk60-pro-rgb-profesyonel-oyuncu-ve-yayinci-mikrofonu-fiyati,1062213963.html" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mikrofon_foto.png" alt="Mikrofon 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mikrofon 1</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Havit<br>GK60 PRO</span>
+                        </a>
+                        
+                        <!-- YENİ MİKROFON 2 (Çevre Birimlerine Taşındı) -->
+                        <a href="YENI_MIKROFON_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="yeni_mikrofon_foto.png" alt="Yeni Mikrofon 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mikrofon 2</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Ekstra<br>Mikrofon Modelin</span>
+                        </a>
 
-                            <!-- MOUSEPAD 1 -->
-                            <a href="https://wraithesports.com/products/spirit-of-aim-pro-mousepad" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mousepad1_foto.png" alt="Mousepad 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mousepad</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">Wraith<br>Spirit of Aim Pro</span>
-                            </a>
-                            <!-- MOUSEPAD 2 -->
-                            <a href="https://ulugames.com.tr/products/ulugames-cam-mousepad" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mousepad2_foto.png" alt="Mousepad 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mousepad</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">Ulugames<br>ONYX GlassPad</span>
-                            </a>
-                            <!-- MOUSEPAD 3 -->
-                            <a href="https://ulugames.com.tr/products/ulugames-drift-speed-mousepad" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mousepad3_foto.png" alt="Mousepad 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mousepad</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">Ulugames<br>Kanashii Drift</span>
-                            </a>
-                            
-                            <!-- KULAKLIK 1 -->
-                            <a href="https://wraithesports.com/products/atk-n9-wireless-kulaklik" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="kulaklik1_foto.png" alt="Kulaklık 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kulaküstü Kulaklık</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">ATK<br>N9 Ultra</span>
-                            </a>
-                            <!-- KULAKLIK 2 -->
-                            <a href="https://wraithesports.com/products/wraith-evox-iem-kulaklik" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="kulaklik2_foto.png" alt="Kulaklık 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kulakiçi Kulaklık</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">evox<br>IEM</span>
-                            </a>
-                            <!-- MİKROFON -->
-                            <a href="https://www.akakce.com/profesyonel-mikrofon/en-ucuz-havit-gamenote-gk60-pro-rgb-profesyonel-oyuncu-ve-yayinci-mikrofonu-fiyati,1062213963.html" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="mikrofon_foto.png" alt="Mikrofon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mikrofon</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">Havit<br>GK60 PRO</span>
-                            </a>
-                            <!-- MİKROFON KOLU -->
-                            <a href="Bulunamadı" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="boomarm_foto.png" alt="Boom Arm" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mikrofon Standı</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">Amortisörlü<br>Mikrofon Kolu</span>
-                            </a>
-                            <!-- SES KARTI -->
-                            <a href="https://wraithesports.com/products/nicehck-nk1-max-dac-amp-ses-karti" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="seskarti_foto.png" alt="Ses Kartı" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ses Kartı</span>
-                                <span class="text-[11px] text-gray-200 font-mono leading-tight">NICEHCK<br>NK1 Max</span>
-                            </a>
-                        </div>
-
-                        <!-- TAB 2: ÖNCEDEN KULLANILANLAR (BAŞLANGIÇTA GİZLİ VE SAĞDA) -->
-                        <div id="old-gear" class="tab-content tab-right grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                            <!-- ESKİ KLAVYE -->
-                            <a href="YENI_KLAVYE_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center opacity-75 hover:opacity-100">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500"><img src="yeni_klavye_foto.png" alt="Eski Klavye" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1 group-hover:text-purple-400 transition-colors">Klavye</span>
-                                <span class="text-[11px] text-gray-300 font-mono leading-tight line-through decoration-purple-500/50 group-hover:no-underline transition-all">Wraith W75</span>
-                            </a>
-
-                            <!-- ESKİ MOUSE 1 -->
-                            <a href="YENI_MOUSE1_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center opacity-75 hover:opacity-100">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500"><img src="yeni_mouse1_foto.png" alt="Eski Mouse 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1 group-hover:text-purple-400 transition-colors">Mouse</span>
-                                <span class="text-[11px] text-gray-300 font-mono leading-tight line-through decoration-purple-500/50 group-hover:no-underline transition-all">ATK Dragonfly A9</span>
-                            </a>
-
-                            <!-- ESKİ MOUSE 2 -->
-                            <a href="YENI_MOUSE2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center opacity-75 hover:opacity-100">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500"><img src="yeni_mouse2_foto.png" alt="Eski Mouse 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1 group-hover:text-purple-400 transition-colors">Mouse</span>
-                                <span class="text-[11px] text-gray-300 font-mono leading-tight line-through decoration-purple-500/50 group-hover:no-underline transition-all">Glorious Model I</span>
-                            </a>
-                            
-                            <!-- ESKİ KLAVYE 2 -->
-                            <a href="ESKI_KLAVYE2_LINKI" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center opacity-75 hover:opacity-100">
-                                <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500"><img src="eski_klavye2_foto.png" alt="Eski Klavye 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1 group-hover:text-purple-400 transition-colors">Klavye</span>
-                                <span class="text-[11px] text-gray-300 font-mono leading-tight line-through decoration-purple-500/50 group-hover:no-underline transition-all">Glorious GMMK2</span>
-                            </a>
-                        </div>
+                        <!-- MİKROFON KOLU -->
+                        <a href="Bulunamadı" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="boomarm_foto.png" alt="Boom Arm" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Mikrofon Standı</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Amortisörlü<br>Mikrofon Kolu</span>
+                        </a>
+                        <!-- SES KARTI -->
+                        <a href="https://wraithesports.com/products/nicehck-nk1-max-dac-amp-ses-karti" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="seskarti_foto.png" alt="Ses Kartı" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ses Kartı</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">NICEHCK<br>NK1 Max</span>
+                        </a>
                     </div>
                 </div>
 
@@ -506,30 +454,35 @@
                         <i class="fa-solid fa-camera"></i> Yayın, Aksesuar & Dekor
                     </h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <!-- STREAM DECK -->
-                        <a href="https://www.akakce.com/stream-deck/en-ucuz-fifine-ampligame-d6-fiyati,1474663774.html" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
-                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="streamdeck_foto.png" alt="Stream Deck" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
-                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Yayın Kontrolü</span>
-                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Stream Deck<br>Panel</span>
+                        
+                        <!-- YENİ SOUNDBAR (Eklenen) -->
+                        <a href="SOUNDBAR_LINKI_BURAYA" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
+                            <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="soundbar_foto.png" alt="Soundbar" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
+                            <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Ses Sistemi</span>
+                            <span class="text-[11px] text-gray-200 font-mono leading-tight">Soundbar<br>Hoparlör</span>
                         </a>
+                        
                         <!-- GAMEPAD 1 -->
                         <a href="https://www.akakce.com/oyun-kolu/en-ucuz-sony-dualsense-beyaz-kablosuz-ps5-fiyati,1232989046.html" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
                             <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="gamepad1_foto.png" alt="Gamepad 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kontrolcü</span>
                             <span class="text-[11px] text-gray-200 font-mono leading-tight">Birinci<br>Gamepad Modelin</span>
                         </a>
+                        
                         <!-- GAMEPAD 2 -->
                         <a href="https://www.akakce.com/oyun-kolu/en-ucuz-secuzi-lig-3601-kablolu-kablosuz-fiyati,1261449885.html" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
                             <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="gamepad2_foto.png" alt="Gamepad 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Kontrolcü</span>
                             <span class="text-[11px] text-gray-200 font-mono leading-tight">İkinci<br>Gamepad Modelin</span>
                         </a>
+                        
                         <!-- PIXEL EKRAN -->
                         <a href="https://www.amazon.com/dp/B0CGJ57Y9M?plpRedirect=mhFallback" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
                             <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="pixelscreen_foto.png" alt="Pixel Ekran" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
                             <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-1">Dekoratif Işık</span>
                             <span class="text-[11px] text-gray-200 font-mono leading-tight">Pixel<br>Ekran (Akıllı)</span>
                         </a>
+                        
                         <!-- KATANA -->
                         <a href="https://kilicustasi.com/products/katana-kilici" target="_blank" class="group flex flex-col items-center bg-black/40 p-3 rounded-xl border border-purple-500/20 hover:border-purple-500/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 text-center">
                             <div class="w-full aspect-square rounded-lg overflow-hidden bg-white/5 mb-3 flex items-center justify-center"><img src="katana_foto.png" alt="Katana" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"></div>
@@ -580,7 +533,7 @@
         setInterval(updateActivities, 5000);
     </script>
     
-    <!-- SCRIPT: YAZI EFEKTİ, MODAL TOGGLE, CAROUSEL & TABS -->
+    <!-- SCRIPT: YAZI EFEKTİ, MODAL TOGGLE & CAROUSEL -->
     <script>
         // --- 1. YAZI EFEKTİ ---
         const texts = ["Not Zenin?, Huh!"];
@@ -652,7 +605,6 @@
             const modal = document.getElementById('equipment-modal');
             if (!modal.classList.contains('hidden')) {
                 updateCarouselHeight();
-                updateTabsHeight(); // Resize anında tab yüksekliğini de güncelle
             }
         });
 
@@ -678,53 +630,11 @@
                 
                 setTimeout(() => {
                     updateCarouselHeight();
-                    updateTabsHeight();
                 }, 10);
             } else {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }
-        }
-
-        // --- 4. TAB (SEKME) GEÇİŞ MANTIĞI ---
-        function updateTabsHeight() {
-            const container = document.getElementById('tabs-container');
-            const activeTab = document.querySelector('.tab-active');
-            if(activeTab) {
-                // Konteyner yüksekliğini aktif olan tab'in yüksekliğine eşitle
-                container.style.height = activeTab.offsetHeight + 'px';
-            }
-        }
-
-        function switchTab(tabId) {
-            const activeGear = document.getElementById('active-gear');
-            const oldGear = document.getElementById('old-gear');
-            const btnActive = document.getElementById('btn-active-gear');
-            const btnOld = document.getElementById('btn-old-gear');
-
-            // Aktif Tab'i sağa veya sola kaydırıp gizle, yeni geleni ekrana çek
-            if (tabId === 'active-gear') {
-                activeGear.className = 'tab-content tab-active grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4';
-                oldGear.className = 'tab-content tab-right grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4';
-                
-                btnActive.classList.add('tab-btn-active');
-                btnActive.classList.remove('text-gray-400', 'hover:text-purple-300', 'border-transparent');
-                
-                btnOld.classList.remove('tab-btn-active');
-                btnOld.classList.add('text-gray-400', 'hover:text-purple-300', 'border-transparent');
-            } else {
-                activeGear.className = 'tab-content tab-left grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4';
-                oldGear.className = 'tab-content tab-active grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4';
-                
-                btnOld.classList.add('tab-btn-active');
-                btnOld.classList.remove('text-gray-400', 'hover:text-purple-300', 'border-transparent');
-                
-                btnActive.classList.remove('tab-btn-active');
-                btnActive.classList.add('text-gray-400', 'hover:text-purple-300', 'border-transparent');
-            }
-
-            // Animasyon sırasında taşıyıcı kutunun boyunu yumuşakça ayarla
-            setTimeout(updateTabsHeight, 50);
         }
     </script>
 </body>
